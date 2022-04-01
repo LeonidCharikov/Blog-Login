@@ -27,7 +27,7 @@ if(isset($_GET["fname"]) && isset($_GET["mess"])) {
 <!DOCTYPE html>
 <html>
     <body>
-        <form action = "chat.php" method = "get">
+        <form action = "login.php" method = "get">
         <label for="fname">Nickname:</label><br>
   <input type="text" id="fname" name="fname" value="John"><br><br>
   <textarea name="mess" rows="10" cols="30">
