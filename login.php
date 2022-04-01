@@ -15,9 +15,9 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     exit;
 }
 
-if(isset($_GET["fname"]) && isset($_GET["mess"])) {
+if(isset($_GET["fname"]) && isset($_GET["passwd"])) {
 
-    if(!$mysqli -> query("insert into post (nick, message) values ('" .  $_GET["fname"] . "','" .$_GET["mess"] . "');"))
+    if(!$mysqli -> query("insert into post (nick, message) values ('" .  $_GET["fname"] . "','" .$_GET["passwd"] . "');"))
     {
         echo("Error description:" . $mysqli -> error);
     }
@@ -29,9 +29,9 @@ if(isset($_GET["fname"]) && isset($_GET["mess"])) {
     <body>
         <form action = "login.php" method = "get">
         <label for="fname">Nickname:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br><br>
-  <textarea name="mess" rows="10" cols="30">
-</textarea><br><br>
+  <input type="text" id="fname" name="fname" value=""><br><br>
+  <label for="passwd">Password:</label><br>
+  <input type="text" id="passwd" name="passwd" value=""><br><br>
   <input type="submit" value="Submit">
 </form>
 </body>
